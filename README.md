@@ -91,6 +91,12 @@ pip install -e ".[dev]"
 
 ## Ejecutar el experimento
 
+> **Los datos ya vienen incluidos.** El repositorio trae la campaña de referencia
+> `results/abcd_robust_h64/` (SPY, TSLA y BTC-USD) y el encoder preentrenado
+> `models/encoders/tcn_heavy.pt`. Si solo quieres explorar los resultados, puedes
+> saltar directamente al **[Paso 4 — Dashboard](#paso-4--dashboard)** sin ejecutar
+> nada más. Los pasos 1-3 son para regenerar los resultados desde cero.
+
 ### Paso 1 — Análisis auxiliar del espacio latente (opcional)
 
 ```powershell
@@ -132,8 +138,11 @@ Lee los CSVs existentes y recalcula el IVL. Para una campaña concreta, pasa
 python dashboard\app.py --results-dir results/abcd_robust_h64
 ```
 
-Abre **http://127.0.0.1:8050** en el navegador. El dashboard detecta
-automáticamente los resultados disponibles.
+Abre **http://127.0.0.1:8050** en el navegador. Como la campaña
+`results/abcd_robust_h64/` viene incluida en el repositorio, el dashboard funciona
+nada más clonar, sin necesidad de ejecutar los pasos anteriores. Detecta
+automáticamente los tickers disponibles (SPY, TSLA, BTC-USD) y muestra la sección
+cross-ticker.
 
 ### Paso 5 — Figuras reproducibles desde resultados existentes (opcional)
 
